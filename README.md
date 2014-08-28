@@ -8,16 +8,6 @@ Installation
 
 rexpro-php does not require MsgPack anymore as it can also serialize using json. If you wish you can still use it though: [MsgPack](http://msgpack.org/) .
 
-Install MsgPack from git:
-
-```bash
-git clone https://github.com/msgpack/msgpack-php.git
-cd msgpack-php
-phpize
-./configure && make && make install
-```
-Warning this is not the latest version anymore and will not work!!! Leaving this here for the information
-
 Install MsgPack from PEAR:
 
 ```bash
@@ -30,14 +20,52 @@ sudo php5enmod msgpack
 
 ##### For Rexster 2.4+
 
+Prefered method is through composer. Add the following to your **composer.json** file:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/PommeVerte/rexpro-php.git"
+        }
+    ],
+    "require": {
+        "brightzone/rexpro": "master"
+    }
+}
+```
+If you just want to pull and use the library do:
+
 ```bash
 git clone https://github.com/PommeVerte/rexpro-php.git
+cd rexpro-php
+composer install --no-dev # required to set autoload files
 ```
 
 ##### For Rexster 2.3
 
+Prefered method is through composer. Add the following to your **composer.json** file:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/PommeVerte/rexpro-php.git"
+        }
+    ],
+    "require": {
+        "brightzone/rexpro": "2.3"
+    }
+}
+```
+If you just want to pull and use the library do:
+
 ```bash
 git clone https://github.com/PommeVerte/rexpro-php.git -b 2.3
+cd rexpro-php
+composer install --no-dev # required to set autoload files
 ```
 
 

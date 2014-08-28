@@ -78,58 +78,6 @@ class Messages
 	}
 	
 	/**
-	 * Serializes the meta either msgpack or JSON
-	 * 
-	 * @param array &$message Meta with request information
-	 * 
-	 * @link http://msgpack.org/
-	 * @link https://github.com/msgpack/msgpack-php
-	 * 
-	 * @return int length of generated string
-	 */
-	protected function serializeMessage(&$message)
-	{
-		if($this->_serializerType == self::SERIALIZER_MSGPACK)
-		{
-			$message[0] = Helper::uuidToBin($message[0]);
-			$message[1] = Helper::uuidToBin($message[1]);
-			$message = msgpack_pack($message);
-		}
-		else
-		{
-			$message = json_encode($message, JSON_UNESCAPED_UNICODE);
-		}
-
-		return mb_strlen($message, 'ISO-8859-1');
-	}
-
-	/**
-	 * Unserializes the meta either msgpack or JSON
-	 * 
-	 * @param String $message message to decode.
-	 * 
-	 * @link http://msgpack.org/
-	 * @link https://github.com/msgpack/msgpack-php
-	 * 
-	 * @return array decoded message
-	 */
-	protected function unserializeMessage($message)
-	{
-		if($this->_serializerType == self::SERIALIZER_MSGPACK)
-		{
-			$mssg = msgpack_unpack($message);
-			//lets just make UUIDs readable incase we need to debug 
-			$mssg[0] = Helper::binToUuid($mssg[0]);
-			$mssg[1] = Helper::binToUuid($mssg[1]);
-		}
-		else
-		{
-			$mssg = json_decode($message, TRUE, JSON_UNESCAPED_UNICODE);
-		}
-		return $mssg;
-	}
-	
-	/**
 	 * Constructs full binary message (including outter envelope) For use in Session creation
 	 * 
 	 * @param string $sessionUuid     session ID. This is not necessary at this stage but still included
