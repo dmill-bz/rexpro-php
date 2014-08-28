@@ -18,9 +18,13 @@ sudo php5enmod msgpack
 
 ### PHP Rexster Client
 
+##### For TP3 and a Gremlin-Server version of this client go here :
+
+https://github.com/PommeVerte/rexpro-php/tree/3.0
+
 ##### For Rexster 2.4+
 
-Prefered method is through composer. Add the following to your **composer.json** file:
+Prefered method is trough composer. Add the following to your **composer.json** file:
 
 ```json
 {
