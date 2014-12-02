@@ -1,7 +1,7 @@
 {
     "name": "brightzone/rexpro-php",
     "description": "rexpro client for php",
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "authors": [
         {
             "name": "Brightzone",
