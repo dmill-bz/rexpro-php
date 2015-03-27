@@ -20,7 +20,7 @@ sudo php5enmod msgpack
 
 ##### For TP3 and a Gremlin-Server version of this client go here :
 
-https://github.com/PommeVerte/rexpro-php/tree/3.0
+https://github.com/PommeVerte/gremlin-php
 
 ##### For Rexster 2.4+
 
