@@ -1,3 +1,5 @@
+#### Please note that the current version of TinkerPop (TP) is TP3. You can find a driver for that version [here](https://github.com/PommeVerte/gremlin-php). If you are already running a TP2 project and want a driver for that version then read on.
+
 This is a rexpro client for PHP. It's main purpose was for it to be integrated into frameworks, and therefore it will fail silently and not throw any exceptions. See Error handling section 
 
 
